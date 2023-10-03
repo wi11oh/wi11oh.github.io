@@ -4,8 +4,8 @@ const rectangles = document.querySelectorAll('.card')
 
 
 function getRandomSpeed() { return Math.random() * 8 }
-const speedsX = [getRandomSpeed(), getRandomSpeed(), getRandomSpeed(), getRandomSpeed(), getRandomSpeed()]
-const speedsY = [getRandomSpeed(), getRandomSpeed(), getRandomSpeed(), getRandomSpeed(), getRandomSpeed()]
+const speedsX = [getRandomSpeed(), getRandomSpeed(), getRandomSpeed(), getRandomSpeed(), getRandomSpeed(), getRandomSpeed()]
+const speedsY = [getRandomSpeed(), getRandomSpeed(), getRandomSpeed(), getRandomSpeed(), getRandomSpeed(), getRandomSpeed()]
 
 function moveRectangles() {
     rectangles.forEach((rectangle, index) => {
@@ -42,7 +42,7 @@ function moveRectangles() {
 
 
 function badfeeling() {
-    let countdown = 15
+    document.getElementById("countspan").innerText = countdown
 
     const intervalsec = setInterval(() => {
         document.getElementById("countspan").innerText = countdown
