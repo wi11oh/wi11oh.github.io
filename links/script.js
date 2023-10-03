@@ -42,7 +42,7 @@ function moveRectangles() {
 
 
 function badfeeling() {
-    const countdown = 25
+    let countdown = 25
     document.getElementById("countspan").innerText = countdown
 
     const intervalsec = setInterval(() => {
