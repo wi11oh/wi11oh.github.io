@@ -3,15 +3,13 @@ const rectangles = document.querySelectorAll('.card')
 
 
 
+// 動かすやつ
 function getRandomSpeed() {
     return (Math.floor(Math.random() * 80) + 5) / 10;
 }
-
 const speedsX = [getRandomSpeed(), getRandomSpeed(), getRandomSpeed(), getRandomSpeed(), getRandomSpeed(), getRandomSpeed()]
 const speedsY = [getRandomSpeed(), getRandomSpeed(), getRandomSpeed(), getRandomSpeed(), getRandomSpeed(), getRandomSpeed()]
-
 console.log(speedsX, speedsY)
-
 function moveRectangles() {
     rectangles.forEach((rectangle, index) => {
         let posX = rectangle.offsetLeft
@@ -39,13 +37,13 @@ function moveRectangles() {
         rectangle.style.left = posX + 'px'
         rectangle.style.top = posY + 'px'
     })
-
     requestAnimationFrame(moveRectangles)
 }
 
 
 
 
+// リダイレクト関係
 function badfeeling() {
     let countdown = 100
     document.getElementById("countspan").innerText = countdown
@@ -62,6 +60,7 @@ function badfeeling() {
 
 
 
+//クリック挙動
 function clickcard() {
     rectangles.forEach(div => {
         div.addEventListener("click", (e) => {
@@ -76,8 +75,18 @@ function clickcard() {
 
 
 
+//初期スポーン
+function randomspone() {
+    rectangles.forEach(card => {
+        card.style.top = Math.floor(Math.random() * 101) + "%"
+        card.style.left = Math.floor(Math.random() * 101) + "%"
+    })
+}
 
 
+
+
+randomspone()
 badfeeling()
 // clickcard()
 moveRectangles()
