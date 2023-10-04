@@ -36,6 +36,7 @@ function moveRectangles() {
 
         rectangle.style.left = posX + 'px'
         rectangle.style.top = posY + 'px'
+        rectangle.querySelector(".locnum").innerText = `${Math.floor(posX)}px X ${Math.floor(posY)}px`
     })
     requestAnimationFrame(moveRectangles)
 }
@@ -61,16 +62,16 @@ function badfeeling() {
 
 
 //クリック挙動
-function clickcard() {
-    rectangles.forEach(div => {
-        div.addEventListener("click", (e) => {
-            console.log(e.target)
-            const link = e.target.getAttribute("data-linkfor")
-            console.log(link)
-            window.location.href = link
-        })
-    })
-}
+// function clickcard() {
+//     rectangles.forEach(div => {
+//         div.addEventListener("click", (e) => {
+//             console.log(e.target)
+//             const link = e.target.getAttribute("data-linkfor")
+//             console.log(link)
+//             window.location.href = link
+//         })
+//     })
+// }
 
 
 

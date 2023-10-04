@@ -35,12 +35,12 @@
             cursor: pointer;
         }
 
-        header h1 {
+        header>h1 {
             margin: 0 0 1px 0;
             font-family: 'DotGothic16', sans-serif;
         }
 
-        header p {
+        header>p {
             margin: 0;
             font-size: medium;
             font-family: 'DotGothic16', sans-serif;
@@ -55,8 +55,20 @@
             font-size: 30px;
             padding: 0.5%;
             /*text-align: center; */
-            font-family:'Pixelify Sans', cursive;
+            font-family: 'Pixelify Sans', cursive;
             cursor: pointer;
+        }
+
+        .loc {
+            position: relative;
+            height: 51%;
+        }
+
+        .locnum {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            font-size: medium;
         }
     </style>
     <style>
@@ -70,39 +82,54 @@
             <i class="fa-solid fa-link"></i>&nbsp;うぃろのリンクとか
         </h1>
         <p>
-            &nbsp;<span id="countspan">**</span>&nbsp;秒以内にクリックしないと 好き嫌い.com に飛ばされて嫌な気持ちになります<i class="fa-solid fa-rotate-right"></i>
+            &nbsp;<span id="countspan">**</span>&nbsp;秒以内にクリックしないと 好き嫌い.com に飛ばされて嫌な気持ちになります<i
+                class="fa-solid fa-rotate-right"></i>
         </p>
     </header>
 
     <div id="note"></div>
-    <div class="card" id="twitter" data-linkfor="https://x.com" onclick="window.location.href='https://twitter.com/UirouMachineVRC';" style="top:0%;">
+    <div class="card" id="twitter"
+        onclick="window.location.href='https://twitter.com/UirouMachineVRC';" style="top:0%;">
         <i class="fa-brands fa-twitter"></i><br>
         <span>twitter</span>
+        <div class="loc"><span class="locnum">*</span></div>
     </div>
 
-    <div class="card" id="misskey" data-linkfor="https://misskey.io/@willoh" onclick="window.location.href='https://misskey.io/@willoh';" style="top:5%;">
+    <div class="card" id="misskey"
+        onclick="window.location.href='https://misskey.io/@willoh';" style="top:5%;">
         <i class="fa-solid fa-m"></i><br>
         <span>misskey</span>
+        <div class="loc"><span class="locnum">*</span></div>
     </div>
 
-    <div class="card" id="github" data-linkfor="https://github.com/wi11oh" onclick="window.location.href='https://github.com/wi11oh';" style="top:10%;">
+    <div class="card" id="github"
+        onclick="window.location.href='https://github.com/wi11oh';" style="top:10%;">
         <i class="fa-brands fa-github"></i><br>
         <span>github</span>
+        <div class="loc"><span class="locnum">*</span></div>
     </div>
 
-    <div class="card" id="discord" data-linkfor="https://discordapp.com/users/931226313501581372" onclick="window.location.href='https://discordapp.com/users/931226313501581372';" style="top:15%;">
+    <div class="card" id="discord"
+        onclick="window.location.href='https://discordapp.com/users/931226313501581372';" style="top:15%;">
         <i class="fa-brands fa-discord"></i><br>
         <span>discord</span>
+        <div class="loc"><span class="locnum">*</span></div>
     </div>
 
-    <div class="card" id="vrchat" data-linkfor="https://vrchat.com/home/user/usr_be03ca94-25b5-48cd-984a-750898a66163" onclick="window.location.href='https://vrchat.com/home/user/usr_be03ca94-25b5-48cd-984a-750898a66163';" style="top:20%;">
+    <div class="card" id="vrchat"
+        onclick="window.location.href='https://vrchat.com/home/user/usr_be03ca94-25b5-48cd-984a-750898a66163';"
+        style="top:20%;">
         <i class="fa-solid fa-message"></i><br>
         <span>VRChat</span>
+        <div class="loc"><span class="locnum">*</span></div>
     </div>
 
-    <div class="card" id="amazon" data-linkfor="https://www.amazon.jp/hz/wishlist/ls/KN53ETQSDFPS?ref_=wl_share" onclick="window.location.href='https://www.amazon.jp/hz/wishlist/ls/KN53ETQSDFPS?ref_=wl_share';" style="top:100%;">
+    <div class="card" id="amazon"
+        onclick="window.location.href='https://www.amazon.jp/hz/wishlist/ls/KN53ETQSDFPS?ref_=wl_share';"
+        style="top:100%;">
         <i class="fa-brands fa-amazon"></i><br>
         <span>amazon</span>
+        <div class="loc"><span class="locnum">*</span></div>
     </div>
 
     <script src="https://wi11oh.com/links/script.js"></script>
