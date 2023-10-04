@@ -3,9 +3,14 @@ const rectangles = document.querySelectorAll('.card')
 
 
 
-function getRandomSpeed() { return Math.random() * 8 }
+function getRandomSpeed() {
+    return (Math.floor(Math.random() * 80) + 5) / 10;
+}
+
 const speedsX = [getRandomSpeed(), getRandomSpeed(), getRandomSpeed(), getRandomSpeed(), getRandomSpeed(), getRandomSpeed()]
 const speedsY = [getRandomSpeed(), getRandomSpeed(), getRandomSpeed(), getRandomSpeed(), getRandomSpeed(), getRandomSpeed()]
+
+console.log(speedsX, speedsY)
 
 function moveRectangles() {
     rectangles.forEach((rectangle, index) => {

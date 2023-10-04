@@ -27,15 +27,23 @@
             border: 2px solid black;
             background-color: white;
             margin: 2% auto;
-            width: 80%;
+            width: 90%;
             /* border-radius: 100px; */
-            text-align: center;
+            /* text-align: center; */
+            padding: 0.5%;
             z-index: 1;
+            cursor: pointer;
         }
 
-        h1 {
+        header h1 {
+            margin: 0 0 1px 0;
+            font-family: 'DotGothic16', sans-serif;
+        }
+
+        header p {
             margin: 0;
             font-size: medium;
+            font-family: 'DotGothic16', sans-serif;
         }
 
         .card {
@@ -52,49 +60,53 @@
         }
     </style>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@900&family=Pixelify+Sans&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Noto+Sans+JP:wght@900&family=Pixelify+Sans&display=swap');
     </style>
 </head>
 
 <body>
-    <header>
-        <h1 onclick="window.location.reload();"><span id="countspan">**</span>&nbsp;秒以内にクリックしないと好き嫌い.comに飛ばされて嫌な気持ちになります
-            <i class="fa-solid fa-rotate-right"></i>
+    <header onclick="window.location.reload();">
+        <h1>
+            <i class="fa-solid fa-link"></i>&nbsp;うぃろのリンクとか
         </h1>
+        <p>
+            &nbsp;<span id="countspan">**</span>&nbsp;秒以内にクリックしないと 好き嫌い.com に飛ばされて嫌な気持ちになります<i class="fa-solid fa-rotate-right"></i>
+        </p>
     </header>
 
     <div id="note"></div>
     <div class="card" id="twitter" data-linkfor="https://x.com" onclick="window.location.href='https://x.com';">
-        <i class="fa-brands fa-twitter"></i><br><br>
+        <i class="fa-brands fa-twitter"></i><br>
         <span>twitter</span>
     </div>
 
     <div class="card" id="misskey" data-linkfor="https://misskey.io/@willoh" onclick="window.location.href='https://misskey.io/@willoh';">
-        <i class="fa-solid fa-m"></i><br><br>
+        <i class="fa-solid fa-m"></i><br>
         <span>misskey</span>
     </div>
 
     <div class="card" id="github" data-linkfor="https://github.com/wi11oh" onclick="window.location.href='https://github.com/wi11oh';">
-        <i class="fa-brands fa-github"></i><br><br>
+        <i class="fa-brands fa-github"></i><br>
         <span>github</span>
     </div>
 
     <div class="card" id="discord" data-linkfor="https://discordapp.com/users/931226313501581372" onclick="window.location.href='https://discordapp.com/users/931226313501581372';">
-        <i class="fa-brands fa-discord"></i><br><br>
+        <i class="fa-brands fa-discord"></i><br>
         <span>discord</span>
     </div>
 
     <div class="card" id="vrchat" data-linkfor="https://vrchat.com/home/user/usr_be03ca94-25b5-48cd-984a-750898a66163" onclick="window.location.href='https://vrchat.com/home/user/usr_be03ca94-25b5-48cd-984a-750898a66163';">
-        <i class="fa-solid fa-message"></i><br><br>
+        <i class="fa-solid fa-message"></i><br>
         <span>VRChat</span>
     </div>
 
     <div class="card" id="amazon" data-linkfor="https://www.amazon.jp/hz/wishlist/ls/KN53ETQSDFPS?ref_=wl_share" onclick="window.location.href='https://www.amazon.jp/hz/wishlist/ls/KN53ETQSDFPS?ref_=wl_share';">
-        <i class="fa-brands fa-amazon"></i><br><br>
+        <i class="fa-brands fa-amazon"></i><br>
         <span>amazon</span>
     </div>
 
     <script src="https://wi11oh.com/links/script.js"></script>
+    <!-- <script src="script.js"></script> -->
 </body>
 
 </html>
