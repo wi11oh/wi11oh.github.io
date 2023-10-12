@@ -36,7 +36,7 @@ function moveRectangles() {
 
         rectangle.style.left = posX + 'px'
         rectangle.style.top = posY + 'px'
-        rectangle.querySelector(".locnum").innerText = `${Math.floor(posX)}px X ${Math.floor(posY)}px`
+        rectangle.querySelector(".locnum").innerText = `${("0000" + (Math.floor(posX))).slice(-4)}px X ${("0000" + (Math.floor(posY))).slice(-4)}px`
     })
     requestAnimationFrame(moveRectangles)
 }
