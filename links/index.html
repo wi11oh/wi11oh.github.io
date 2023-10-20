@@ -4,20 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="importmap">
+        {
+            "imports": {
+            "three": "https://unpkg.com/three@v0.157.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@v0.157.0/examples/jsm/"
+            }
+        }
+    </script>
 
 
+    <!-- google AT -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HD97D3QHDY"></script>
     <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-HD97D3QHDY');</script>
+
+
+    <!-- Open Graph Protocol -->
     <meta property="og:title" content="うぃろのリンク">
     <meta property="og:url" content="https://wi11oh.com/links">
     <meta property="og:image" content="https://wi11oh.com/links/ogp.jpg">
     <meta property="og:type" content="website" />
     <meta property="og:description" content="うぃろのリンク共" />
     <meta property="og:site_name" content="willoh links" />
-
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://wi11oh.com/links" />
     <meta name="twitter:title" content="うぃろのリンク" />
@@ -25,132 +39,257 @@
     <meta name="twitter:image" content="https://wi11oh.com/links/ogp.jpg" />
     <meta name="twitter:site" content="@UirouMachineVRC" />
 
+
+    <!-- settings -->
+    <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="https://avatars.githubusercontent.com/u/145419677?v=4">
     <title>willoh links</title>
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-        }
-
-        header {
-            border: 2px solid black;
-            background-color: white;
-            margin: 2% auto;
-            width: 90%;
-            /* border-radius: 100px; */
-            /* text-align: center; */
-            padding: 0.5%;
-            z-index: 1;
-            cursor: pointer;
-        }
-
-        header>h1 {
-            margin: 0;
-            font-family: 'Noto Sans JP', sans-serif;
-        }
-
-        header>p {
-            margin: 5px;
-            font-size: medium;
-            font-family: 'Noto Sans JP', sans-serif;
-        }
-
-        .card {
-            width: 150px;
-            height: 150px;
-            position: absolute;
-            z-index: -1;
-            border: 2px solid black;
-            font-size: 30px;
-            padding: 0.5%;
-            /*text-align: center; */
-            font-family: 'Pixelify Sans', cursive;
-            cursor: pointer;
-        }
-
-        .loc {
-            position: relative;
-            height: 52%;
-        }
-
-        .locnum {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            font-size: medium;
-        }
-
-        @media only screen and (max-device-width: 480px) {
-            .card {
-                width: 100px;
-                height: 100px;
-                font-size: 20px;
-                padding: 2%;
-            }
-        }
-    </style>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Noto+Sans+JP:wght@300;400&family=Pixelify+Sans&family=Roboto+Mono&display=swap');
-    </style>
 </head>
 
 <body>
-    <header onclick="window.location.reload();">
-        <h1>
-            <i class="fa-solid fa-link"></i>&nbsp;&nbsp;links
-        </h1>
-        <p>
-            <span id="countspan">**</span>&nbsp;秒以内にクリックしないと 好き嫌い.com に飛ばされて嫌な気持ちになります
-            <i class="fa-solid fa-rotate-right"></i>
-        </p>
-    </header>
+    <!-- ルゼブル　エロ　ください -->
 
-    <div id="note"></div>
-    <div class="card" id="twitter" onclick="window.location.href='https://twitter.com/UirouMachineVRC';"
-        style="top:0%;">
-        <i class="fa-brands fa-twitter"></i><br>
-        <span>twitter</span>
-        <div class="loc"><span class="locnum">*</span></div>
+
+
+
+
+
+
+    <div class="avatar noncard movable">
+        <div class="titlebar">
+            <div class="title">
+                avatar in JPT
+            </div>
+            <div class="close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+        <div class="main">
+            <div class="mainarea" style="padding: 0;">
+                <div class="moveicon"><p><i class="fa-solid fa-arrows-up-down-left-right"></i></p></div>
+            </div>
+            <div class="statusbar">
+                <p> <span class="loc">*</span></p>
+            </div>
+        </div>
     </div>
 
-    <div class="card" id="misskey" onclick="window.location.href='https://misskey.io/@willoh';" style="top:5%;">
-        <i class="fa-solid fa-m"></i><br>
-        <span>misskey</span>
-        <div class="loc"><span class="locnum">*</span></div>
+
+
+
+
+
+    <div class="keybord noncard movable hide">
+        <div class="titlebar">
+            <div class="title">
+                keybord
+            </div>
+            <div class="close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+        <div class="main">
+            <div class="mainarea">
+                <div class="keys key_q">q</div>
+                <div class="keys key_w">w</div>
+                <div class="keys key_e">e</div>
+                <div class="keys key_r">r</div>
+                <div class="keys key_t">t</div>
+                <div class="keys key_y">y</div>
+                <div class="keys key_u">u</div>
+                <div class="keys key_i">i</div>
+                <div class="keys key_o">o</div>
+                <div class="keys key_p">p</div>
+                <div class="keys key_a">a</div>
+                <div class="keys key_s">s</div>
+                <div class="keys key_d">d</div>
+                <div class="keys key_f">f</div>
+                <div class="keys key_g">g</div>
+                <div class="keys key_h">h</div>
+                <div class="keys key_j">j</div>
+                <div class="keys key_k">k</div>
+                <div class="keys key_l">l</div>
+                <div class="keys key_enter fn">↵</div>
+                <div class="keys key_z">z</div>
+                <div class="keys key_x">x</div>
+                <div class="keys key_c">c</div>
+                <div class="keys key_v">v</div>
+                <div class="keys key_b">b</div>
+                <div class="keys key_n">n</div>
+                <div class="keys key_m">m</div>
+                <div class="keys key_backspace fn">←</div>
+                <div class="keys key_space fn">␣</div>
+            </div>
+            <div class="statusbar">
+                <p> <span class="loc">*</span></p>
+            </div>
+        </div>
     </div>
 
-    <div class="card" id="github" onclick="window.location.href='https://github.com/wi11oh';" style="top:10%;">
-        <i class="fa-brands fa-github"></i><br>
-        <span>github</span>
-        <div class="loc"><span class="locnum">*</span></div>
+
+
+
+
+
+    <div class="cmd noncard movable">
+        <div class="titlebar">
+            <div class="title">
+                console
+            </div>
+            <div class="close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+        <div class="main">
+            <div class="mainarea">
+                <p class="consoleinit" style="color: rgb(0, 255, 0);">willoh links v0.1.</p>
+                <p class="consoleline">badfeeling</p>
+                <p class="consoleline output">
+                    <span class="countspan">*</span> 秒以内にリンクをクリックしなければ 好き嫌い.com に飛ばされて嫌な気持ち になります。
+                </p>
+                <p class="consoleline currentline">help (pless Enter)</p>
+            </div>
+            <div class="statusbar">
+                <p> <span class="loc">*</span></p>
+            </div>
+        </div>
     </div>
 
-    <div class="card" id="discord" onclick="window.location.href='https://discordapp.com/users/931226313501581372';"
-        style="top:15%;">
-        <i class="fa-brands fa-discord"></i><br>
-        <span>discord</span>
-        <div class="loc"><span class="locnum">*</span></div>
+
+
+
+
+
+    <div class="card movable" id="twitter">
+        <div class="titlebar">
+            <div class="title">
+                links *
+            </div>
+            <div class="close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+        <div class="main" onclick="window.location.href='https://twitter.com/UirouMachineVRC';">
+            <div class="mainarea">
+                <i class="fa-brands fa-twitter"></i><br>
+                <span>twitter</span>
+            </div>
+            <div class="statusbar">
+                <p> <span class="loc">*</span></p>
+            </div>
+        </div>
     </div>
 
-    <div class="card" id="vrchat"
-        onclick="window.location.href='https://vrchat.com/home/user/usr_be03ca94-25b5-48cd-984a-750898a66163';"
-        style="top:20%;">
-        <i class="fa-solid fa-message"></i><br>
-        <span>VRChat</span>
-        <div class="loc"><span class="locnum">*</span></div>
+    <div class="card movable" id="misskey">
+        <div class="titlebar">
+            <div class="title">
+                links *
+            </div>
+            <div class="close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+        <div class="main" onclick="window.location.href='https://misskey.io/@willoh';">
+            <div class="mainarea">
+                <i class="fa-solid fa-m"></i><br>
+                <span>misskey</span>
+            </div>
+            <div class="statusbar">
+                <p> <span class="loc">*</span></p>
+            </div>
+        </div>
     </div>
 
-    <div class="card" id="amazon"
-        onclick="window.location.href='https://www.amazon.jp/hz/wishlist/ls/KN53ETQSDFPS?ref_=wl_share';"
-        style="top:100%;">
-        <i class="fa-brands fa-amazon"></i><br>
-        <span>wishlist</span>
-        <div class="loc"><span class="locnum">*</span></div>
+    <div class="card movable" id="github">
+        <div class="titlebar">
+            <div class="title">
+                links *
+            </div>
+            <div class="close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+        <div class="main" onclick="window.location.href='https://github.com/wi11oh';">
+            <div class="mainarea">
+                <i class="fa-brands fa-github"></i><br>
+                <span>github</span>
+            </div>
+            <div class="statusbar">
+                <p> <span class="loc">*</span></p>
+            </div>
+        </div>
     </div>
 
-    <script src="https://wi11oh.com/links/script.js"></script>
-    <!-- <script src="script.js"></script> -->
+    <div class="card movable" id="discord">
+        <div class="titlebar">
+            <div class="title">
+                links *
+            </div>
+            <div class="close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+        <div class="main" onclick="window.location.href='https://discordapp.com/users/931226313501581372';">
+            <div class="mainarea">
+                <i class="fa-brands fa-discord"></i><br>
+                <span>discord</span>
+            </div>
+            <div class="statusbar">
+                <p> <span class="loc">*</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card movable" id="vrchat">
+        <div class="titlebar">
+            <div class="title">
+                links *
+            </div>
+            <div class="close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+        <div class="main"
+            onclick="window.location.href='https://vrchat.com/home/user/usr_be03ca94-25b5-48cd-984a-750898a66163';">
+            <div class="mainarea">
+                <i class="fa-solid fa-message"></i><br>
+                <span>vrchat</span>
+            </div>
+            <div class="statusbar">
+                <p> <span class="loc">*</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card movable" id="amazon">
+        <div class="titlebar">
+            <div class="title">
+                links *
+            </div>
+            <div class="close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+        <div class="main"
+            onclick="window.location.href='https://www.amazon.jp/hz/wishlist/ls/KN53ETQSDFPS?ref_=wl_share';">
+            <div class="mainarea">
+                <i class="fa-brands fa-amazon"></i><br>
+                <span>amazon</span>
+            </div>
+            <div class="statusbar">
+                <p> <span class="loc">*</span></p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script type="module" src="./script.js"></script>
+    <script type="module" src="./thjs.js"></script>
 </body>
 
 </html>

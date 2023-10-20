@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&family=Silkscreen&display=swap');
+
+@font-face {
+    font-family: "misaki";
+    src: url(./assets/misaki_gothic.ttf);
+}
+
+
+
+
+
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+p {
+    margin: 0;
+}
+
+.hide {
+    display: none;
+}
+
+
+
+
+
+
+.cmd {
+    height: 350px;
+    width: 600px;
+    background-color: rgba(255, 255, 255, 0.5);
+    user-select: none;
+    border: 2px solid black;
+    font-family: 'Silkscreen', sans-serif;
+    position: absolute;
+    top: calc(60% - (350px / 2));
+    left: calc(65% - (600px / 2));
+}
+
+.cmd .mainarea {
+    user-select: text;
+    background-color: rgba(0, 0, 0, 0.582);
+    color: white;
+    overflow-y: scroll;
+}
+
+.cmd .consoleinit {
+    margin-bottom: 20px;
+}
+
+.consoleline::before {
+    content: "wi11oh.com > ";
+    color: rgb(0, 255, 0);
+    font-family: "Silkscreen";
+}
+
+.consoleline {
+    font-family: "Silkscreen", "misaki";
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.helpcommand {
+    color: yellow;
+}
+
+.currentline::after {
+    content: "_";
+    animation: blink 0.5s linear infinite alternate;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    49% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.output::before {
+    content: none;
+}
+
+
+
+
+
+
+
+.avatar {
+    height: 350px;
+    width: 600px;
+    background-color: rgba(255, 255, 255, 0.5);
+    user-select: none;
+    border: 2px solid black;
+    font-family: 'Silkscreen', sans-serif;
+    position: absolute;
+    top: calc(40% - (350px / 2));
+    left: calc(35% - (600px / 2));
+}
+
+
+
+
+
+
+.keybord {
+    height: 350px;
+    width: 600px;
+    background-color: rgba(255, 255, 255, 0.5);
+    user-select: none;
+    border: 2px solid black;
+    font-family: 'Silkscreen', sans-serif;
+    position: absolute;
+    top: calc(80% - (350px / 2));
+    left: calc(50% - (600px / 2));
+}
+
+.keybord .mainarea {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr)
+}
+
+.keybord .mainarea .keys {
+    border: 1px solid black;
+    font-size: 15px;
+}
+
+
+
+
+
+
+.card {
+    background-color: rgba(255, 255, 255, 0.5);
+    user-select: none;
+    width: 170px;
+    height: 170px;
+    position: absolute;
+    border: 2px solid black;
+    font-family: 'Silkscreen', sans-serif;
+    cursor: pointer;
+}
+
+
+
+
+
+
+.titlebar {
+    height: 22.5px;
+    width: 100%;
+    border-bottom: 2px solid black;
+    margin: 0;
+    position: relative;
+}
+
+.titlebar .title {
+    margin: 0;
+    width: calc(100% - 39.5px);
+    padding: 3px 0 3px 7.5px;
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: grab;
+}
+
+.titlebar .close {
+    background-color: rgb(255, 0, 0);
+    border-left: 2px solid black;
+    position: absolute;
+    height: 100%;
+    width: calc(100% - (100% - 32px));
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
+
+.titlebar .close i {
+    margin-top: 2px;
+}
+
+
+
+
+
+
+.main {
+    height: calc(100% - 22.5px);
+}
+
+.main .mainarea {
+    padding: 7.5px;
+    height: calc(100% - 12px - 22.5px + 4px);
+    font-size: 20px;
+    font-family: 'Silkscreen', sans-serif;
+}
+
+.avatar .mainarea {
+    position: relative;
+    padding: 0px;
+    height: calc(100% - 12px - 22.5px + 4px + 15px) !important;
+    cursor: move;
+
+}
+
+.avatar .mainarea .moveicon {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    font-size: 20px;
+}
+
+.main .statusbar {
+    height: 12px;
+    width: 100%;
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+    border-top: 2px solid black;
+}
+
+.main .statusbar p {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-size: 1px;
+    text-align: right;
+}
+
+.main .statusbar span {
+    font-size: 10px;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+
+
+
+@media screen and (max-device-width: 1000px) {
+    .noncard {
+        height: 175px;
+        width: 300px;
+
+        font-size: 15px;
+    }
+
+    .cmd {
+        height: 200px;
+        top: calc(55% - (200px / 2));
+        left: calc(60% - (300px / 2));
+    }
+
+    .cmd .consoleinit {
+        margin-bottom: 10px;
+    }
+
+    .avatar {
+        top: calc(45% - (175px / 2));
+        left: calc(40% - (300px / 2));
+    }
+
+    .keybord {
+        top: calc(80% - (175px / 2));
+        left: calc(50% - (300px / 2));
+    }
+}
+
+
+
+
+
+
+@media screen and (max-device-width: 480px) {
+    .card {
+        width: 120px;
+        height: 120px;
+        font-size: 15px;
+    }
+}
+
+
+
+
+
+@media screen and (max-device-width: 400px) {
+    .noncard {
+        height: 150px;
+        width: 257px;
+
+        font-size: 15px;
+    }
+
+    .cmd {
+        height: 200px;
+        top: calc(55% - (200px / 2));
+        left: calc(55% - (257px / 2));
+    }
+
+    .cmd .mainarea {
+        font-size: 20px;
+    }
+
+    .cmd .consoleinit {
+        margin-bottom: 5px;
+    }
+
+    .cmd .mainarea .consoleline {
+        margin-bottom: 2px;
+    }
+
+    .avatar {
+        top: calc(45% - (150px / 2));
+        left: calc(45% - (257px / 2));
+    }
+
+    .avatar .mainarea {
+        font-size: 20px;
+    }
+
+    .keybord {
+        top: calc(80% - (150px / 2));
+        left: calc(50% - (257px / 2));
+    }
+}
