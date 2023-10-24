@@ -32,7 +32,7 @@ const dracoLoader = new DRACOLoader()
 dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.6/')
 loader.setDRACOLoader(dracoLoader)
 loader.load(
-    "./_jpt.gltf",
+    "./jpt.gltf",
     function (gltf) {
         scene.add(gltf.scene)
     },
