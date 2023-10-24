@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 const rectangles = document.querySelectorAll(".card")
 
 
@@ -12,6 +5,7 @@ const rectangles = document.querySelectorAll(".card")
 
 
 
+// 動かし
 function getRandomSpeed() {
     return (Math.floor(Math.random() * 80) + 5) / 10
 }
@@ -182,21 +176,34 @@ document.querySelectorAll(".movable").forEach(rectangle => {
 
 
 // リダイレクト関係
-const birthDay = new Date('2000-11-29T00:00:00+09:00').getTime()
+let killcountdown = false
 function badfeeling() {
     let countdown = 100
     document.querySelectorAll(".countspan").forEach(cs => {
         cs.innerHTML = countdown
     })
     const intervalsec = setInterval(() => {
-        document.querySelectorAll(".countspan").forEach(cs => {
-            cs.innerHTML = countdown
-        })
-        countdown--
-        if (countdown < 0) {
-            window.location.href = "https://suki-kira.com"
+        if (killcountdown == false) {
+            document.querySelectorAll(".countspan").forEach(cs => {
+                cs.innerHTML = countdown
+            })
+            countdown--
+            if (countdown < 0) {
+                window.location.href = "https://suki-kira.com"
+            }
+        } else {
+            clearInterval(intervalsec)
         }
 
+    }, 1000)
+}
+
+
+
+// birthday
+const birthDay = new Date('2000-11-29T00:00:00+09:00').getTime()
+function btd() {
+    const birthsec = setInterval(() => {
         const currentTime = new Date().getTime()
         const elapsedSeconds = Math.floor((currentTime - birthDay) / 1000)
         try {
@@ -205,11 +212,9 @@ function badfeeling() {
             })
         } catch (error) {
         }
+    }, 1000);
 
-    }, 1000)
 }
-
-
 
 
 
@@ -238,7 +243,8 @@ function randomspone() {
         card.style.left = Math.floor(Math.random() * 81) + "%"
         document.querySelectorAll(".loc").forEach(loc => {
             loc.clientLeft
-            loc.innerText = `${("0000" + Math.floor(card.offsetLeft)).slice(-4)}px * ${("0000" + Math.floor(card.offsetTop)).slice(-4)}px`
+            loc.innerText = `${("0000" + Math.floor(card.offsetLeft)).slice(-4)}px` +
+                `* ${("0000" + Math.floor(card.offsetTop)).slice(-4)}px`
         })
     })
 
@@ -264,37 +270,52 @@ function close() {
 
 
 // cmd
+function hSpenit(indata) {
+    document.querySelector(".currentline").innerText = indata
+    pressEnter()
+}
+
 function pressEnter() {
     const cl = document.querySelector(".currentline")
     let out
     const inlist = cl.innerText.split(" ")
     switch (inlist[0]) {
         case "help":
-            out = '<span class="helpcommand">status</span> :  introduce willoh in more detail<br>詳細な自己紹介<br>' +
-                '<span class="helpcommand">mail **</span> : Send a message to willoh with the content **.<br>メールを俺に。内容はスペースを開けたあとに<br>' +
-                '<span class="helpcommand">stop</span> : Stops the animation moving around.<br>アニメーションをストップ<br>' +
-                '<span class="helpcommand">restart</span> : animation restart<br>アニメーションを再開<br>'
+            out = `<span class="helpcommand h-snippet" onclick="hSpenit('status')">status</span> : 詳細な自己紹介<br>` +
+                `<span class="helpcommand h-snippet" onclick="hSpenit('kill')">kill</span> : 嫌な気持ちカウントダウンを止める<br>` +
+                `<span class="helpcommand h-snippet" onclick="hSpenit('mail')">mail</span> : メールを俺に。<br>` +
+                `<span class="helpcommand h-snippet" onclick="hSpenit('anim')">anim (</span><span class="helpcommand h-snippet" onclick="hSpenit('anim stop')">stop|</span><span class="helpcommand h-snippet" onclick="hSpenit('anim restart')">restart)</span> : アニメーションをストップorリスタート<br>` +
+                `<span class="helpcommand h-snippet" onclick="hSpenit('exit')">exit</span> : コンソールを閉じる。<br>`;
+            btd()
             break
         case "status":
-            out = `<span class="birth">*</span>秒前生まれ`
+            out = `<span class="birth">*</span>秒前生まれ、幼稚園を卒業しています。ニートをしてます雇ってください行政書士資格もってますんで。`
             break
         case "":
             out = null
             break
-        case "stop":
-            document.querySelectorAll(".movable").forEach(rectangle => {
-                rectangle.classList.add("paused")
-            })
-            out = "animation is stopped"
+        case "anim":
+            if (inlist[1] == "stop") {
+                document.querySelectorAll(".movable").forEach(rectangle => {
+                    rectangle.classList.add("paused")
+                    out = "アニメーション止めるよ"
+                })
+            } else if (inlist[1] == "restart") {
+                document.querySelectorAll(".movable").forEach(rectangle => {
+                    rectangle.classList.remove("paused")
+                    out = "じゃあ、動くね…"
+                })
+            } else {
+                out = "そのコマンドが見つかりません。'HELP'で使用できるコマンドを参照できます"
+            }
             break
-        case "restart":
-            document.querySelectorAll(".movable").forEach(rectangle => {
-                rectangle.classList.remove("paused")
-                out = "animation is restarted"
-            })
+        case "kill":
+            killcountdown = true
+            out = "はい。"
             break
         case "mail":
-            out = null
+            out = "メールアプリを起動します"
+            location.href = `mailto:uiroumachine@gmail.com`
             break
         case "badfeeling":
             out = '<span class="countspan">*</span> 秒以内にリンクをクリックしなければ 好き嫌い.com に飛ばされて嫌な気持ち になります。'
@@ -302,8 +323,11 @@ function pressEnter() {
         case "exit":
             document.querySelector(".cmd").remove()
             break
+        case "":
+            out = null
+            break
         default:
-            out = "command not found. You can refer to the commands in 'HELP'"
+            out = "そのコマンドが見つかりません。'HELP'で使用できるコマンドを参照できます"
     }
 
     const output = document.createElement("p")
@@ -318,6 +342,7 @@ function pressEnter() {
 
     document.querySelector(".cmd .mainarea").scrollTop = document.querySelector(".cmd .mainarea").scrollHeight
 }
+
 function keyinput() {
     document.addEventListener("keypress", (e) => {
         const cl = document.querySelector(".currentline")
@@ -335,6 +360,8 @@ function keyinput() {
         }
     })
 }
+
+
 
 
 
@@ -377,6 +404,7 @@ function spKey() {
 stopOnHover()
 close()
 randomspone()
+btd()
 badfeeling()
 // clickcard()
 moveRectangles()

@@ -54,11 +54,10 @@
 
 
 
-
     <div class="avatar noncard movable">
         <div class="titlebar">
             <div class="title">
-                avatar in JPT
+                use avatars
             </div>
             <div class="close">
                 <i class="fa-solid fa-xmark"></i>
@@ -66,7 +65,9 @@
         </div>
         <div class="main">
             <div class="mainarea" style="padding: 0;">
-                <div class="moveicon"><p><i class="fa-solid fa-arrows-up-down-left-right"></i></p></div>
+                <div class="moveicon">
+                    <p><i class="fa-solid fa-arrows-up-down-left-right"></i></p>
+                </div>
             </div>
             <div class="statusbar">
                 <p> <span class="loc">*</span></p>
@@ -142,12 +143,12 @@
         </div>
         <div class="main">
             <div class="mainarea">
-                <p class="consoleinit" style="color: rgb(0, 255, 0);">willoh links v0.1.</p>
+                <p class="consoleinit">willoh links v0.1.</p>
                 <p class="consoleline">badfeeling</p>
                 <p class="consoleline output">
                     <span class="countspan">*</span> 秒以内にリンクをクリックしなければ 好き嫌い.com に飛ばされて嫌な気持ち になります。
                 </p>
-                <p class="consoleline currentline">help (pless Enter)</p>
+                <p class="consoleline currentline h-snippet" onclick="hSpenit('help')">help (pless Enter)</p>
             </div>
             <div class="statusbar">
                 <p> <span class="loc">*</span></p>
@@ -287,8 +288,7 @@
 
 
 
-
-    <script type="module" src="./script.js"></script>
+    <script src="./script.js"></script>
     <script type="module" src="./thjs.js"></script>
 </body>
 

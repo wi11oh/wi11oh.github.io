@@ -13,6 +13,7 @@
 body {
     margin: 0;
     overflow: hidden;
+    background-color: rgb(206, 206, 206);
 }
 
 p {
@@ -29,15 +30,15 @@ p {
 
 
 .cmd {
-    height: 350px;
-    width: 600px;
+    height: 55%;
+    width: 50%;
     background-color: rgba(255, 255, 255, 0.5);
     user-select: none;
     border: 2px solid black;
     font-family: 'Silkscreen', sans-serif;
     position: absolute;
-    top: calc(60% - (350px / 2));
-    left: calc(65% - (600px / 2));
+    top: calc(60% - (55% / 2));
+    left: calc(65% - (50% / 2));
 }
 
 .cmd .mainarea {
@@ -49,22 +50,26 @@ p {
 
 .cmd .consoleinit {
     margin-bottom: 20px;
+    font-size: 40px;
+    color: rgb(30, 255, 0);
 }
 
 .consoleline::before {
     content: "wi11oh.com > ";
-    color: rgb(0, 255, 0);
-    font-family: "Silkscreen";
+    color: rgb(30, 255, 0);
 }
 
 .consoleline {
     font-family: "Silkscreen", "misaki";
-    font-size: 15px;
     margin-bottom: 10px;
 }
 
 .helpcommand {
     color: yellow;
+}
+
+.h-snippet {
+    cursor: pointer;
 }
 
 .currentline::after {
@@ -99,17 +104,16 @@ p {
 
 
 
-
 .avatar {
-    height: 350px;
-    width: 600px;
+    height: 55%;
+    width: 50%;
     background-color: rgba(255, 255, 255, 0.5);
     user-select: none;
     border: 2px solid black;
     font-family: 'Silkscreen', sans-serif;
     position: absolute;
-    top: calc(40% - (350px / 2));
-    left: calc(35% - (600px / 2));
+    top: calc(40% - (55% / 2));
+    left: calc(35% - (50% / 2));
 }
 
 
@@ -118,15 +122,15 @@ p {
 
 
 .keybord {
-    height: 350px;
-    width: 600px;
+    height: 420px;
+    width: 720px;
     background-color: rgba(255, 255, 255, 0.5);
     user-select: none;
     border: 2px solid black;
     font-family: 'Silkscreen', sans-serif;
     position: absolute;
-    top: calc(80% - (350px / 2));
-    left: calc(50% - (600px / 2));
+    top: calc(80% - (420px / 2));
+    left: calc(50% - (720px / 2));
 }
 
 .keybord .mainarea {
@@ -209,7 +213,7 @@ p {
 .main .mainarea {
     padding: 7.5px;
     height: calc(100% - 12px - 22.5px + 4px);
-    font-size: 20px;
+    font-size: 25px;
     font-family: 'Silkscreen', sans-serif;
 }
 
@@ -258,22 +262,64 @@ p {
 
 
 
-@media screen and (max-device-width: 1000px) {
-    .noncard {
-        height: 175px;
-        width: 300px;
 
-        font-size: 15px;
+
+
+
+
+@media screen and (max-device-width: 1100px) {
+    .noncard {
+        height: 350px;
+        width: 600px;
     }
 
     .cmd {
-        height: 200px;
-        top: calc(55% - (200px / 2));
+        top: calc(55% - (350px / 2));
+        left: calc(60% - (600px / 2));
+    }
+
+    .cmd .mainarea {
+        font-size: 15px;
+    }
+
+    .cmd .consoleinit {
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+
+    .avatar {
+        top: calc(45% - (350px / 2));
+        left: calc(40% - (600px / 2));
+    }
+
+    .keybord {
+        top: calc(80% - (350px / 2));
+        left: calc(50% - (600px / 2));
+    }
+}
+
+
+
+
+
+
+@media screen and (max-device-width: 780px) {
+    .noncard {
+        height: 175px;
+        width: 300px;
+    }
+
+    .cmd {
+        height: 300px;
+        top: calc(55% - (300px / 2));
         left: calc(60% - (300px / 2));
     }
 
     .cmd .consoleinit {
         margin-bottom: 10px;
+    }
+    .cmd .main .mainarea {
+        font-size: 15px;
     }
 
     .avatar {
@@ -285,20 +331,17 @@ p {
         top: calc(80% - (175px / 2));
         left: calc(50% - (300px / 2));
     }
-}
 
-
-
-
-
-
-@media screen and (max-device-width: 480px) {
     .card {
         width: 120px;
         height: 120px;
-        font-size: 15px;
+    }
+
+    .main .mainarea {
+        font-size: 20px;
     }
 }
+
 
 
 
@@ -308,18 +351,12 @@ p {
     .noncard {
         height: 150px;
         width: 257px;
-
-        font-size: 15px;
     }
 
     .cmd {
-        height: 200px;
-        top: calc(55% - (200px / 2));
+        height: 250px;
+        top: calc(55% - (250px / 2));
         left: calc(55% - (257px / 2));
-    }
-
-    .cmd .mainarea {
-        font-size: 20px;
     }
 
     .cmd .consoleinit {
@@ -331,7 +368,7 @@ p {
     }
 
     .avatar {
-        top: calc(45% - (150px / 2));
+        top: calc(35% - (150px / 2));
         left: calc(45% - (257px / 2));
     }
 

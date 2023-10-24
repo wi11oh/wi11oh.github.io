@@ -32,7 +32,7 @@ const dracoLoader = new DRACOLoader()
 dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.6/')
 loader.setDRACOLoader(dracoLoader)
 loader.load(
-    "./assets/avatar.gltf",
+    "./_jpt.gltf",
     function (gltf) {
         scene.add(gltf.scene)
     },
@@ -42,9 +42,26 @@ loader.load(
     }
 )
 
-camera.rotation.x = -0.5
+
 function animate() {
     requestAnimationFrame(animate)
     renderer.render(scene, camera)
 }
 animate()
+
+
+window.addEventListener('resize', onResize);
+
+function onResize() {
+    // サイズを取得
+    const width = document.querySelector(".avatar .mainarea").clientWidth
+    const height = document.querySelector(".avatar .mainarea").offsetHeight
+
+    // レンダラーのサイズを調整する
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(width, height);
+
+    // カメラのアスペクト比を正す
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+}
