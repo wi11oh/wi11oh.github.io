@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&family=Silkscreen&display=swap');
 
 @font-face {
-    font-family: "misaki";
-    src: url(./assets/misaki_gothic.ttf);
+    font-family: "bt";
+    src: url(./assets/bestten.otf);
 }
 
 
@@ -60,7 +60,7 @@ p {
 }
 
 .consoleline {
-    font-family: "Silkscreen", "misaki";
+    font-family: "Silkscreen", "bt";
     margin-bottom: 10px;
 }
 

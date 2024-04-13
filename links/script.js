@@ -1,4 +1,5 @@
 const rectangles = document.querySelectorAll(".card")
+let max_zindex = 10
 
 
 
@@ -53,26 +54,28 @@ function moveRectangles() {
 
 // ホバー時ストップ
 function stopOnHover() {
-    document.querySelectorAll(".movable").forEach(rectangle => {
+    document.querySelectorAll(".card").forEach(rectangle => {
         rectangle.addEventListener("mouseover", () => {
             rectangle.classList.add("paused")
-            rectangle.style.zIndex = "1"
+            rectangle.style.zIndex = "calc(infinity)"
         })
 
         rectangle.addEventListener("mouseout", () => {
             rectangle.classList.remove("paused")
-            rectangle.style.zIndex = "0"
+            max_zindex += 1
+            rectangle.style.zIndex = max_zindex
         })
 
         rectangle.addEventListener("touchstart", () => {
             rectangle.classList.add("paused", "sp")
-            rectangle.style.zIndex = "1"
+            rectangle.style.zIndex = "calc(infinity)"
         })
 
         rectangle.addEventListener("touchend", () => {
             setTimeout(() => {
                 rectangle.classList.remove("paused", "sp")
-                rectangle.style.zIndex = "0"
+                max_zindex += 1
+                rectangle.style.zIndex = max_zindex
             }, 500)
         })
     })
@@ -90,7 +93,9 @@ document.querySelectorAll(".movable").forEach(rectangle => {
     rectangle.querySelector(".title").addEventListener("mousedown", (e) => {
         activeCard = e.target.parentElement.parentElement
         activeCard.style.opacity = "0.5"
-        activeCard.style.zIndex = "1"
+        max_zindex += 1
+        activeCard.style.zIndex = max_zindex
+
 
         const offsetX = e.clientX - activeCard.getBoundingClientRect().left
         const offsetY = e.clientY - activeCard.getBoundingClientRect().top
@@ -108,7 +113,6 @@ document.querySelectorAll(".movable").forEach(rectangle => {
         function dragEnd() {
             if (activeCard) {
                 activeCard.style.opacity = "1"
-                activeCard.style.zIndex = "0"
             }
             activeCard = null
             window.removeEventListener("mousemove", dragMove)
@@ -135,7 +139,8 @@ document.querySelectorAll(".movable").forEach(rectangle => {
     function startDrag(e) {
         activeCard = e.target.parentElement.parentElement
         activeCard.style.opacity = "0.5"
-        activeCard.style.zIndex = "1"
+        max_zindex += 1
+        activeCard.style.zIndex = max_zindex
 
         const offsetX = e.type === "mousedown" ? e.clientX - activeCard.getBoundingClientRect().left : e.touches[0].clientX - activeCard.getBoundingClientRect().left
         const offsetY = e.type === "mousedown" ? e.clientY - activeCard.getBoundingClientRect().top : e.touches[0].clientY - activeCard.getBoundingClientRect().top
@@ -154,7 +159,6 @@ document.querySelectorAll(".movable").forEach(rectangle => {
         function dragEnd() {
             if (activeCard) {
                 activeCard.style.opacity = "1"
-                activeCard.style.zIndex = "0"
             }
             activeCard = null
             window.removeEventListener("mousemove", dragMove)
