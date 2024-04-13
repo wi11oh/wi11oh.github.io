@@ -157,7 +157,39 @@
     </div>
 
 
-
+    <div class="cookie noncard movable">
+        <div class="titlebar">
+            <div class="title">
+                Cookie check
+            </div>
+            <div class="close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+        <div class="main">
+            <div class="mainarea">
+                <p id="cookie_q" style="display: block;">クッキーは好きですか？</p>
+                <p id="cookie_a1" style="display: none;">そうですか</p>
+                <p id="cookie_a2" style="display: none;">そんなぁ</p>
+                <p id="c_btns" style="display: block;"><span id="c_yes" style="background-color: black;cursor:pointer;color:rgb(255, 102, 102)">yes</span> <span id="c_no" style="background-color: black;cursor:pointer;color:rgb(186, 186, 186)">no</span></p>
+                <script>
+                    document.querySelector("#c_yes").addEventListener("click", () => {
+                        document.querySelector("#cookie_q").style.display = "none"
+                        document.querySelector("#cookie_a1").style.display = "block"
+                        document.querySelector("#c_btns").style.display = "none"
+                    })
+                    document.querySelector("#c_no").addEventListener("click", () => {
+                        document.querySelector("#cookie_q").style.display = "none"
+                        document.querySelector("#cookie_a2").style.display = "block"
+                        document.querySelector("#c_btns").style.display = "none"
+                    })
+                </script>
+            </div>
+            <div class="statusbar">
+                <p> <span class="loc">*</span></p>
+            </div>
+        </div>
+    </div>
 
 
 

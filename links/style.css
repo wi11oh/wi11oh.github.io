@@ -29,6 +29,7 @@ p {
 
 
 
+
 .cmd {
     height: 55%;
     width: 50%;
@@ -146,7 +147,27 @@ p {
 
 
 
-
+.cookie {
+    width: 30%;
+    height: 20%;
+    background-color: rgba(255, 255, 255, 0.5);
+    user-select: none;
+    border: 2px solid black;
+    font-family: 'Silkscreen', sans-serif;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+.cookie .mainarea {
+    font-family: "bt";
+    color: black;
+    padding: 7.5px;
+    height: calc(100% - 12px - 22.5px + 4px);
+    font-size: 25px;
+}
+.cookie .mainarea p{
+    font-family: "bt";
+}
 
 
 .card {
