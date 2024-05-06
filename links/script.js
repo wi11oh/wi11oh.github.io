@@ -293,7 +293,11 @@ function pressEnter() {
             btd()
             break
         case "status":
-            out = `<span class="birth">*</span>秒前生まれ、幼稚園を卒業しています。ニートをしてます雇ってください行政書士資格もってますんで。`
+            out = `<style>.likes {color:#00bfff}</style><span class="birth">*</span>秒前生まれ、幼稚園を卒業しています。
+            <br><br>趣味：旅行一人旅・株主優待・電子工作・ガジェット収集・DIY・3Dプリント・タイプライター万年筆収集・ツーリング・一眼レフ
+            <br><br>とくぎ：(プログラミング)python/js/flutter_dart/golang/sql・(行政書士)私法/社会法/行政法周辺・Unity・Blender
+            <br><br>聞く：<a class="likes" href="https://popsnnid.com">ポップしなないで</a>・<a class="likes" href="https://g-a-l.jp/group_inou/">group_inou</a>・<a class="likes" href="https://www.pasoconongaku.club">パソコン音楽クラブ</a>・<a class="likes" href="https://twitter.com/igusuri_please">いよわ</a>・<a class="likes" href="https://riot-music.com/kigensho-records/">長瀬有花</a>・<a class="likes" href="https://sakanaction.jp">サカナクション</a>・<a class="likes" href="https://tokyojihen.com">東京事変</a>・<a class="likes" href="https://tempalay.jp">Tempalay</a>・etc…
+            `
             break
         case "":
             out = null
@@ -409,7 +413,7 @@ stopOnHover()
 close()
 randomspone()
 btd()
-badfeeling()
+// badfeeling()
 // clickcard()
 moveRectangles()
 keyinput()
